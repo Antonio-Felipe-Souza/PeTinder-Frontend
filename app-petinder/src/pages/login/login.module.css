@@ -1,0 +1,145 @@
+:root {
+    --backgroundColor: #F4F4F4;
+    --primaryColor: linear-gradient(90deg, #C7849E 0%, #FFC0D9 100%);
+    --secondaryColor: linear-gradient(90deg, #80465D 0%, #59253A 100%);
+    --tercearyColor: #FF8FBB;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../../assets/Login/fundoLogin.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--backgroundColor);
+}
+
+a {
+    color: var(--secondaryColor);
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--backgroundColor);
+    padding: 30px;
+    border-radius: 15px;
+    width: 560px;
+    height: 560px;
+    text-align: center;
+    box-shadow: 6px 6px rgb(0, 0, 0);
+}
+
+.loginForm {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.titleWrapper {
+    display: flex;
+    gap: 0px;
+    align-items: flex-start;
+}
+
+.titleWrapper img {
+    width: 4rem;
+}
+
+.loginTitle {
+    font-size: 30px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.loginButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginLinkWrapper {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+
+.closeButtonWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.closeButton img {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.switchWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.switchContainer {
+    display: flex;
+    border: 2px solid #80465D;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.switchButton {
+    padding: 6px 18px;
+    width: 7rem;
+    border: none;
+    background: none;
+    color: #80465D;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.switchButton.active {
+    background: #80465D;
+    color: #fff;
+}

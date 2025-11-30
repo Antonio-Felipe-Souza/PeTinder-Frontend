@@ -1,0 +1,278 @@
+:root {
+    --backgroundColor: #F4F4F4;
+    --primaryColor: linear-gradient(90deg, #C7849E 0%, #FFC0D9 100%);
+    --secondaryColor: linear-gradient(90deg, #80465D 0%, #59253A 100%);
+    --tercearyColor: #FF8FBB;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.fixed_top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.division {
+    width: 1px;
+    height: 100%;
+    background: #000;
+}
+
+.background {
+    background: var(--secondaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .configContainer {
+        background: var(--backgroundColor);
+        padding: 5%;
+        border-radius: 20px;
+        height: 85%;
+        width: 95%;
+        display: flex;
+        padding: 0;
+        margin-top: 72px;
+
+        h2 {
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+
+        .sideMenu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1% 3% 31% 3%;
+
+            .optionsTitle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                margin-bottom: 10px;
+                gap: 10px;
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            .optionsSection {
+                width: 151%;
+
+                .options {
+                    font-size: 15px;
+                    height: 40px;
+                    padding-left: 10%;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .options:hover {
+                    cursor: pointer;
+                    background: #FFC0D9;
+                }
+            }
+        }
+    }
+
+    .configInfos {
+        display: flex;
+        flex-direction: column;
+        /* height: 90%; */
+        /* justify-self: end;
+        align-items: center; */
+
+        .registerFormRow {
+            display: flex;
+            justify-content: flex-start;
+            width: 60%;
+        }
+
+        .containerForm {
+            display: flex;
+            width: 110%;
+            margin-left: 90px;
+
+            /* input {
+                margin-bottom: 7px;
+            } */
+
+            .title {
+                font-size: 20px;
+            }
+
+            .configTextInfo1 {
+                display: flex;
+                flex-direction: column;
+                margin-right: 7px;
+                width: 50%;
+                margin-right: 7px;
+                gap: 7px;
+
+            }
+
+            .configTextInfo2 {
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+
+                .inputDif {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 7px;
+
+                    .bigInput {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+                        width: 90%;
+                    }
+
+                    .litInput {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+                        width: 25%;
+                    }
+                }
+
+
+            }
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            justify-content: end;
+            align-items: center;
+            margin-right: -186px;
+
+            .secondaryButton {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.img {
+
+    margin-left: 90px;
+    margin: 0 0 15px 90px;
+}
+
+.segurancaContainer {
+    width: 100%;
+    height: 100%;
+    padding: 25px 50px 0 50px;
+
+
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .segurancaTitle {
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .senhaAtual {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        a {
+            font-size: 12px;
+        }
+    }
+
+    .inputSenhas {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+
+        .inputSenha {
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            padding-left: 15px;
+            font-size: 16px;
+        }
+    }
+
+    .buttonsAct {
+        width: 100%;
+        height: 16%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .deleteAccount {
+        margin-top: 15px;
+    }
+}
+
+.Botaoativo {
+    background: #FFC0D9;
+}
+
+
+.toast {
+    width: 71% !important;
+    height: 6rem !important;
+    position: absolute !important;
+    z-index: 2000 !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    top: 85px !important;
+}
+
+.next {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+
+    .secondary {
+        margin-top: 15px
+    }
+}
+
+.deleteImage img {
+    width: 150px;
+}

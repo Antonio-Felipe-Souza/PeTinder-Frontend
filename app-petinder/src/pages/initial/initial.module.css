@@ -1,0 +1,88 @@
+:root {
+    --backgroundColor: #F4F4F4;
+    --primaryColor: linear-gradient(90deg, #C7849E 0%, #FFC0D9 100%);
+    --secondaryColor: linear-gradient(90deg, #80465D 0%, #59253A 100%);
+    --tercearyColor: #FF8FBB;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: var(--secondaryColor);
+}
+
+.extraContent {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.twoInputs {
+    width: 100%;
+    display: flex;
+    gap: 3px;
+
+    .input1 {
+        width: 70%;
+    }
+
+    .input2 {
+        width: 30%;
+    }
+}
+
+.footerModal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.primaryButton {
+    margin-top: 0px;
+}
+
+.link {
+    margin-top: 10px;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 17rem;
+    align-items: center;
+}
+
+.toast {
+    position: fixed; /* fixa na tela */
+    top: 20px; /* distância do topo */
+    left: 50%; /* centraliza horizontalmente */
+    transform: translateX(-50%); /* corrige o deslocamento */
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px; /* não ocupa toda a tela */
+    height: auto;
+    padding: 15px;
+    background: transparent; /* deixa o fundo neutro */
+    overflow: visible;
+    pointer-events: none;
+}
+
+.toastContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    z-index: 2100;
+    position: relative;
+    pointer-events: none;
+}
