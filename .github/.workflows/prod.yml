@@ -21,7 +21,7 @@ jobs:
 
       - name: Instalar dependências
         working-directory: ./app-petinder
-        run: npm ci
+        run: npm install
 
       - name: Build do App Vite
         working-directory: ./app-petinder
