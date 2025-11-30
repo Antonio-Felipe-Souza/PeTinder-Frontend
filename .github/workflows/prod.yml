@@ -20,9 +20,11 @@ jobs:
           node-version: "20"
 
       - name: Instalar dependências
-        run: npm ci
+        working-directory: ./app-petinder
+        run: npm install
 
       - name: Build do App Vite
+        working-directory: ./app-petinder
         run: npm run build
 
       - name: Configurar Docker Buildx
@@ -37,7 +39,7 @@ jobs:
       - name: Build e Push da imagem
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./app-petinder
+          file: ./app-petinder/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:v1
