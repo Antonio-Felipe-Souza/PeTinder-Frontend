@@ -42,4 +42,28 @@ jobs:
           context: ./app-petinder
           file: ./app-petinder/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:v1
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull da nova imagem do Docker Hub
+        run: |
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+
+      - name: Parar e remover container antigo (se existir)
+        run: |
+          docker stop petinder-frontend || true
+          docker rm petinder-frontend || true
+
+      - name: Subir novo container
+        run: |
+          docker run -d \
+            --name petinder-frontend \
+            -p 80:80 \
+            ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+
+      - name: Verificar se subiu
+        run: docker ps -a
