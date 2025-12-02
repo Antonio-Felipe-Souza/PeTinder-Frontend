@@ -47,9 +47,7 @@ jobs:
 
   deploy_instance_1:
     needs: build
-    runs-on:
-      group: self-hosted
-      labels: frontend-runner-1
+    runs-on: [self-hosted, frontend-runner]
 
     steps:
       - name: Parar e remover container antigo (se existir)
@@ -78,9 +76,7 @@ jobs:
 
   deploy_instance_2:
     needs: build
-    runs-on:
-      group: self-hosted
-      labels: frontend-runner-2
+    runs-on: [self-hosted, frontend-runner]
 
     steps:
       - name: Parar e remover container antigo (se existir)
