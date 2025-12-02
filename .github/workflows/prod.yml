@@ -45,31 +45,60 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
           no-cache: true
 
-  deploy:
+  deploy_instance_1:
     needs: build
-    runs-on: [self-hosted, frontend-runner]
+    runs-on: [self-hosted, frontend-runner-1]
 
     steps:
-     - name: Parar e remover container antigo (se existir)
-       run: |
-         sudo docker stop petinder-frontend || true
-         sudo docker rm petinder-frontend || true
+      - name: Parar e remover container antigo (se existir)
+        run: |
+          sudo docker stop petinder-frontend || true
+          sudo docker rm petinder-frontend || true
 
-     - name: Remover imagem antiga (se existir)
-       run: |
-         sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1 || true
+      - name: Remover imagem antiga (se existir)
+        run: |
+          sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1 || true
 
-     - name: Pull da nova imagem do Docker Hub
-       run: |
-         sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+      - name: Pull da nova imagem
+        run: |
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
 
-     - name: Subir novo container frontend
-       run: |
-         sudo docker run -d \
-           --name petinder-frontend \
-           --restart=always \
-           -p 80:80 \
-           ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+      - name: Subir novo container
+        run: |
+          sudo docker run -d \
+            --name petinder-frontend \
+            --restart=always \
+            -p 80:80 \
+            ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
 
-     - name: Mostrar containers rodando
-       run: sudo docker ps -a
+      - name: Mostrar containers rodando
+        run: sudo docker ps -a
+
+  deploy_instance_2:
+    needs: build
+    runs-on: [self-hosted, frontend-runner-2]
+
+    steps:
+      - name: Parar e remover container antigo (se existir)
+        run: |
+          sudo docker stop petinder-frontend || true
+          sudo docker rm petinder-frontend || true
+
+      - name: Remover imagem antiga (se existir)
+        run: |
+          sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1 || true
+
+      - name: Pull da nova imagem
+        run: |
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+
+      - name: Subir novo container
+        run: |
+          sudo docker run -d \
+            --name petinder-frontend \
+            --restart=always \
+            -p 80:80 \
+            ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
+
+      - name: Mostrar containers rodando
+        run: sudo docker ps -a
