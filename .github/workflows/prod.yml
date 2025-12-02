@@ -56,14 +56,15 @@ jobs:
       - name: Parar e remover container antigo (se existir)
         run: |
           sudo docker stop petinder-frontend || true
-          docker rm petinder-frontend || true
+          sudo docker rm petinder-frontend || true
 
-      - name: Subir novo container
+      - name: Subir novo container frontend
         run: |
           sudo docker run -d \
             --name petinder-frontend \
+            --restart=always \
             -p 80:80 \
             ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
 
-      - name: Verificar se subiu
+      - name: Mostrar containers rodando
         run: sudo docker ps -a
