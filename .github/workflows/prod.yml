@@ -45,7 +45,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy-petinder:frontend-v1
           no-cache: true
 
-  deploy_instance_1:
+  deploy_instancia_1:
     needs: build
     runs-on: [self-hosted, frontend-runner]
 
@@ -74,7 +74,7 @@ jobs:
       - name: Mostrar containers rodando
         run: sudo docker ps -a
 
-  deploy_instance_2:
+  deploy_instancia_2:
     needs: build
     runs-on: [self-hosted, frontend-runner]
 
